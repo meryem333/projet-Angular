@@ -1,0 +1,11 @@
+<h2>Catalogue</h2>
+<p>Panier : {{ cartCount() }} produit(s) - Total : {{ total() | currency:'EUR' }}</p>
+<button (click)="clearCart()">Vider le panier</button>
+
+<div class="grid">
+  @for (product of products(); track product.id) {
+    <app-product-card [product]="product" (addToCart)="onAddToCart($event)" />
+  } @empty {
+    <p class="empty">Aucun produit disponible</p>
+  }
+</div>

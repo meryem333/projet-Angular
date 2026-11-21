@@ -1,0 +1,10 @@
+<div class="product" [class.out]="!product().inStock">
+  <h3>{{ product().name | uppercase }}</h3>
+  <p>{{ product().price | currency:'EUR' }}</p>
+
+  @if (product().inStock) {
+    <button (click)="add()">Ajouter au panier</button>
+  } @else {
+    <span>Rupture de stock</span>
+  }
+</div>
