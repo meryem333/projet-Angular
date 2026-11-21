@@ -1,0 +1,11 @@
+.card {
+  color: green;
+}
+
+:host(:first-child) .card {
+  color: red;
+}
+
+.done {
+  text-decoration: line-through;
+}
